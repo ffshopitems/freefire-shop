@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#160b2b"><title>FF SHOP</title>
+  <link rel="stylesheet" href="style.css"><script src="script.js" defer></script>
+</head>
+<body>
+  <div id="loader" class="loader">
+    <div class="loader-mark">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M7 10h7l6 30h29l8-22H18M24 48a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm22 0a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/></svg>
+    </div>
+    <div class="loader-name">FF <span>SHOP</span></div>
+    <div class="load-track"><i id="loadProgress"></i></div>
+    <small id="loadPercent">0%</small>
+  </div>
+
+  <header class="topbar">
+    <a class="brand" href="#" data-page="home"><span class="brand-icon">FF</span><span>FF <b>SHOP</b><small>GAMING COMMUNITY</small></span></a>
+    <div class="desktop-nav">
+      <button data-page="home" class="nav-link active">Home</button>
+      <button data-page="videos" class="nav-link">Videos</button>
+      <button data-page="tips" class="nav-link">Tips</button>
+    </div>
+    <button class="account-shortcut" data-page="account">Account <span>↗</span></button>
+  </header>
+
+  <main>
+    <section id="homePage" class="page active">
+      <div class="hero">
+        <div class="hero-copy"><span class="eyebrow">✦ WELCOME TO THE ARENA</span>
+          <h1>LEVEL UP<br><em>YOUR GAME.</em></h1>
+          <p>Discover Free Fire videos, highlights and useful gaming content.</p>
+          <button class="primary" data-page="videos">Explore videos <span>↗</span></button>
+        </div>
+        <div class="hero-art"><div class="orb orb-one"></div><div class="orb orb-two"></div><div class="hero-emblem">FF</div><span class="art-caption">PLAY · WATCH · REPEAT</span></div>
+      </div>
+      <div class="section-heading"><div><span class="eyebrow">LATEST CONTENT</span><h2>Featured <em>videos</em></h2></div><button class="text-button" data-page="videos">View all ↗</button></div>
+      <div id="homeVideos" class="video-grid"></div>
+    </section>
+
+    <section id="videosPage" class="page">
+      <div class="page-heading"><span class="eyebrow">THE FF SHOP FEED</span><h1>ALL <em>VIDEOS.</em></h1><p>Watch gaming videos and community highlights.</p></div>
+      <div class="toolbar"><input id="videoSearch" class="search-field" type="search" placeholder="Search videos..."><div id="videoFilters" class="filter-row">
+        <button class="chip selected" data-filter="All">All</button><button class="chip" data-filter="Free Fire Accounts">Accounts</button><button class="chip" data-filter="Diamond Top-Up">Diamonds</button><button class="chip" data-filter="Events">Events</button><button class="chip" data-filter="Gameplay">Gameplay</button><button class="chip" data-filter="Others">Others</button>
+      </div></div>
+      <div id="videoGrid" class="video-grid"></div>
+    </section>
+
+    <section id="tipsPage" class="page">
+      <div class="page-heading"><span class="eyebrow">YOUR SAVED FAVOURITES</span><h1>LIKED <em>VIDEOS.</em></h1><p>Videos you have liked on this device appear here.</p></div>
+      <div id="likedGrid" class="video-grid"></div>
+    </section>
+
+    <section id="accountPage" class="page account-page">
+      <div class="auth-card">
+        <div class="auth-brand">FF <span>SHOP</span></div>
+        <span class="eyebrow">MEMBER ACCESS</span>
+        <h1 id="authTitle">Welcome <em>back.</em></h1>
+        <p id="accountStatus">Sign in or create your account.</p>
+        <div id="authPanel">
+          <form id="authForm">
+            <label for="authUsername">Username</label><input id="authUsername" minlength="3" maxlength="24" autocomplete="username" required placeholder="Enter username">
+            <label for="authPassword">Password</label><input id="authPassword" type="password" minlength="8" autocomplete="current-password" required placeholder="Enter password">
+            <p id="authHint" class="hint">Enter your username and password.</p><p id="authError" class="error" role="alert"></p>
+            <button id="authSubmit" class="primary full" type="submit">Sign in <span>→</span></button>
+          </form>
+          <button id="authSwitch" class="switch-button">New here? Create an account</button>
+        </div>
+        <div id="signedInPanel" hidden><div class="signed-state">✓</div><h2>You're signed in</h2><p id="adminStatus"></p><button id="logoutButton" class="secondary">Sign out</button></div>
+      </div>
+    </section>
+  </main>
+
+  <div id="uploadModal" class="modal" aria-hidden="true">
+    <div class="modal-card"><button id="closeUpload" class="modal-close" aria-label="Close">×</button><span class="eyebrow">ADMIN STUDIO</span><h2>Upload a <em>video.</em></h2>
+      <form id="uploadForm"><label>Video title</label><input id="videoTitle" maxlength="100" required placeholder="Enter video title">
+      <label>Description</label><textarea id="videoDescription" maxlength="500" placeholder="Write a short description"></textarea>
+      <label>Category</label><select id="videoCategory"><option>Gameplay</option><option>Free Fire Accounts</option><option>Diamond Top-Up</option><option>Events</option><option>Others</option></select>
+      <label>Video file</label><input id="videoFile" type="file" accept="video/*" required>
+      <label>Thumbnail (optional)</label><input id="videoThumb" type="file" accept="image/*">
+      <p class="hint">Uploads are saved in this browser only for now. Connect a video-storage API later for public, cross-device hosting.</p>
+      <button class="primary full" type="submit">Add video <span>↑</span></button></form>
+    </div>
+  </div>
+
+  <nav class="bottom-nav">
+    <button data-page="home" class="bottom-link active"><span>⌂</span><small>Home</small></button>
+    <button data-page="videos" class="bottom-link"><span>▣</span><small>Videos</small></button>
+    <button id="adminPlus" class="plus-button" hidden aria-label="Upload video">+</button>
+    <button data-page="tips" class="bottom-link"><span>♡</span><small>Liked</small></button>
+    <button data-page="account" class="bottom-link"><span>◎</span><small>Account</small></button>
+  </nav>
+  <div id="toast" class="toast" role="status"></div>
+</body></html>
