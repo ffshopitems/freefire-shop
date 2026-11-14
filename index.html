@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#06152f">
+  <title>FF SHOP — Free Fire Videos & Marketplace</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">◆</span><span>FF <b>SHOP</b><small>FREE FIRE COMMUNITY</small></span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+    <nav id="mainNav">
+      <a class="active" href="#home">Home</a><a href="#videos">Videos</a><a href="#accounts">FF Accounts</a>
+      <a href="#topups">Diamond Top-Up</a><a href="#events">Events</a><a href="#other">Others</a>
+    </nav>
+    <div class="top-actions"><button class="outline-btn" id="loginBtn">Login</button><button class="blue-btn" id="adminBtn">Admin Upload</button></div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <span class="eyebrow">YOUR FREE FIRE HUB</span>
+        <h1>WATCH. DISCOVER.<br><em>LEVEL UP.</em></h1>
+        <p>Free Fire account showcases, event updates, diamond top-up guides and more — all in one place.</p>
+        <div class="hero-actions"><a class="blue-btn" href="#videos">Explore Videos <span>→</span></a><a class="outline-btn" href="#accounts">Browse Accounts</a></div>
+      </div>
+      <div class="hero-art"><div class="glow"></div><div class="hero-symbol">FF</div><div class="hero-tag">BOOYAH!</div><div class="hero-caption">FREE FIRE<br><b>VIDEO ZONE</b></div></div>
+    </section>
+
+    <section class="category-strip">
+      <a href="#videos" data-filter="all"><span>▶</span><b>All Videos</b><small>Latest uploads</small></a>
+      <a href="#accounts" data-filter="accounts"><span>♛</span><b>FF Accounts</b><small>Account showcases</small></a>
+      <a href="#topups" data-filter="topup"><span>💎</span><b>Diamond Top-Up</b><small>Offers & guides</small></a>
+      <a href="#events" data-filter="events"><span>⚡</span><b>FF Events</b><small>News & updates</small></a>
+      <a href="#other" data-filter="other"><span>✦</span><b>Others</b><small>Tips & gameplay</small></a>
+    </section>
+
+    <section class="section" id="videos">
+      <div class="section-head"><div><span class="eyebrow">WATCH SOMETHING NEW</span><h2>Latest <em>Videos</em></h2></div>
+        <div class="tools"><input id="searchInput" type="search" placeholder="Search videos..."><select id="categoryFilter"><option value="all">All categories</option><option value="accounts">FF Accounts</option><option value="topup">Diamond Top-Up</option><option value="events">FF Events</option><option value="other">Others</option></select></div>
+      </div>
+      <div class="video-grid" id="videoGrid">
+        <article class="video-card demo-card" data-category="accounts"><div class="video-thumb thumb-purple"><span class="play">▶</span><span class="thumb-label">ACCOUNT SHOWCASE</span></div><div class="video-info"><span class="pill">FF Accounts</span><h3>Featured Free Fire Account</h3><p>Showcase • Add your video from Admin Upload</p></div></article>
+        <article class="video-card demo-card" data-category="topup"><div class="video-thumb thumb-blue"><span class="play">▶</span><span class="thumb-label">DIAMOND GUIDE</span></div><div class="video-info"><span class="pill">Diamond Top-Up</span><h3>Diamond Top-Up Information</h3><p>Guide • Add your video from Admin Upload</p></div></article>
+        <article class="video-card demo-card" data-category="events"><div class="video-thumb thumb-cyan"><span class="play">▶</span><span class="thumb-label">EVENT UPDATE</span></div><div class="video-info"><span class="pill">FF Events</span><h3>Latest Free Fire Events</h3><p>Updates • Add your video from Admin Upload</p></div></article>
+      </div>
+      <p class="empty-state" id="emptyState" hidden>No videos found in this category yet.</p>
+    </section>
+
+    <section class="market-section" id="accounts">
+      <div class="section-head"><div><span class="eyebrow">PLAYER MARKETPLACE</span><h2>FF <em>Accounts</em></h2></div><span class="section-note">Account listings and showcase videos</span></div>
+      <div class="market-grid"><div class="market-card"><span class="market-icon">♛</span><h3>Account Showcases</h3><p>Upload videos showing account details, bundles, skins and inventory.</p><a href="#videos" data-filter="accounts">Watch account videos →</a></div><div class="market-card"><span class="market-icon">✚</span><h3>Account Listings</h3><p>Post account information, images and contact details for interested buyers.</p><button class="text-btn" data-notice="Account listing submission can be connected to your backend.">Coming soon →</button></div></div>
+    </section>
+
+    <section class="market-section" id="topups">
+      <div class="section-head"><div><span class="eyebrow">DIAMOND ZONE</span><h2>Diamond <em>Top-Up</em></h2></div></div>
+      <div class="wide-panel"><div class="diamond">💎</div><div><h3>Top-Up Videos & Guides</h3><p>Share diamond top-up videos, package information and step-by-step guides.</p></div><a class="outline-btn" href="#videos" data-filter="topup">View Videos →</a></div>
+    </section>
+
+    <section class="market-section" id="events">
+      <div class="section-head"><div><span class="eyebrow">DON'T MISS OUT</span><h2>Free Fire <em>Events</em></h2></div></div>
+      <div class="wide-panel"><div class="event-icon">⚡</div><div><h3>Event News & Updates</h3><p>Post event videos, new rewards, missions, redeem news and update highlights.</p></div><a class="outline-btn" href="#videos" data-filter="events">View Videos →</a></div>
+    </section>
+
+    <section class="market-section" id="other">
+      <div class="section-head"><div><span class="eyebrow">MORE FROM THE COMMUNITY</span><h2>Other <em>Content</em></h2></div></div>
+      <div class="other-chips"><span>Gameplay</span><span>Tips & Tricks</span><span>Settings</span><span>Highlights</span><span>Challenges</span><span>News</span></div>
+    </section>
+  </main>
+
+  <footer><div class="brand"><span class="brand-mark">◆</span><span>FF <b>SHOP</b><small>FREE FIRE COMMUNITY</small></span></div><p>Community videos and marketplace information. FF SHOP is an independent fan project and is not affiliated with Garena.</p><span>© <span id="year"></span> FF SHOP</span></footer>
+
+  <div class="modal" id="adminModal" aria-hidden="true"><div class="modal-box"><button class="close" data-close="adminModal">×</button><span class="eyebrow">CONTENT MANAGEMENT</span><h2>Upload a <em>Video</em></h2><p class="modal-note">Choose a video, add its details and select a category.</p>
+    <form id="uploadForm">
+      <label>Video title<input name="title" required maxlength="90" placeholder="e.g. New Free Fire event update"></label>
+      <label>Category<select name="category"><option value="accounts">FF Accounts</option><option value="topup">Diamond Top-Up</option><option value="events">FF Events</option><option value="other">Others</option></select></label>
+      <label>Description<textarea name="description" rows="3" placeholder="Write a short description"></textarea></label>
+      <label>Video file<input name="video" type="file" accept="video/*" required></label>
+      <label>Thumbnail image (optional)<input name="thumbnail" type="file" accept="image/*"></label>
+      <button class="blue-btn full" type="submit">Preview Upload</button>
+      <p class="form-status" id="formStatus">Preview mode: connect your storage API to publish videos for everyone.</p>
+    </form>
+  </div></div>
+  <div class="modal" id="loginModal" aria-hidden="true"><div class="modal-box small"><button class="close" data-close="loginModal">×</button><span class="eyebrow">MEMBER AREA</span><h2>Member <em>Login</em></h2><p class="modal-note">Connect this form to your existing login Worker to enable accounts.</p><form id="loginForm"><label>Username<input required placeholder="Your username"></label><label>Password<input required type="password" placeholder="Your password"></label><button class="blue-btn full" type="submit">Continue</button><p class="form-status" id="loginStatus">Login backend is not connected in this starter package.</p></form></div></div>
+  <script src="app.js"></script>
+</body>
+</html>
